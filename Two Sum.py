@@ -11,3 +11,9 @@ class Solution:
                         return ans
                         break
         
+'''
+Success
+Details 
+Runtime: 44 ms, faster than 85.48% of Python3 online submissions for Two Sum.
+Memory Usage: 14.4 MB, less than 48.63% of Python3 online submissions for Two Sum.
+'''
