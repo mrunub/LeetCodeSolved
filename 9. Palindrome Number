@@ -1,0 +1,15 @@
+#https://leetcode.com/problems/palindrome-number/
+
+class Solution:
+    def isPalindrome(self, x: int) -> bool:
+        if x in range(-(2**31),(2**31)):
+            return str(x) == str(x)[::-1]
+            
+'''
+
+Success
+Details 
+Runtime: 52 ms, faster than 90.94% of Python3 online submissions for Palindrome Number.
+Memory Usage: 14.1 MB, less than 77.17% of Python3 online submissions for Palindrome Number.
+
+'''
