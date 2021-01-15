@@ -1,0 +1,32 @@
+#https://leetcode.com/problems/roman-to-integer/
+
+class Solution:
+    def romanToInt(self, s: str) -> int:
+        if len(s) in range(1,16) and set(s).issubset({'I', 'V', 'X', 'L', 'C', 'D', 'M'}):
+            value_dict={'I':1, 'V':5, 'X':10, 'L':50, 'C':100, 'D':500, 'M':1000}
+            num=0
+            ''' 
+            #Using for loop
+            for x in list(s):
+                num+=value_dict[x]'''
+            num=sum( [ value_dict[x] for x in list(s)] )
+            if 'IX' in s or 'IV' in s:
+                num-=2
+            if 'XL' in s or 'XC' in s:
+                num-=20
+            if 'CD' in s or 'CM' in s:
+                num-=200
+                
+            return num
+
+
+                
+'''
+
+Success
+Details 
+Runtime: 44 ms, faster than 82.38% of Python3 online submissions for Roman to Integer.
+Memory Usage: 14 MB, less than 94.92% of Python3 online submissions for Roman to Integer.
+
+
+'''
