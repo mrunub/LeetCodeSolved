@@ -1,0 +1,24 @@
+#https://leetcode.com/problems/valid-parentheses/
+
+class Solution:
+    def isValid(self, s: str) -> bool:
+        if 1<=len(s)<=10**4 and len(s)%2==0:
+            if set(s).issubset(set('()[]{}')):
+                dict_pair={'(':')','[':']','{':'}'}
+                temp=[]
+                for open_ in s:
+                    if open_ in dict_pair:
+                        temp.append(open_)
+                    else:
+                        if not temp or open_!=dict_pair[temp.pop()]: 
+                            return False          
+                return not temp
+                    
+        
+                
+'''
+Success
+Details 
+Runtime: 20 ms, faster than 99.25% of Python3 online submissions for Valid Parentheses.
+Memory Usage: 14.3 MB, less than 67.00% of Python3 online submissions for Valid Parentheses.
+'''
