@@ -1,0 +1,34 @@
+#https://leetcode.com/problems/longest-common-prefix/
+
+class Solution:
+    def longestCommonPrefix(self, strs: List[str]) -> str:
+        if 0 <= len(strs) <= 200:
+            for word1 in strs:
+                if 0 <= len(word1) <= 200 and word1.islower():
+                    continue
+                else:
+                    return ""
+        if strs==[] or strs==[""]:
+                return ""
+        lenlist=[len(word) for word in strs]
+        minlen=min(lenlist)
+        templist,flag,common=[],True,''
+        index=-1
+        while flag:
+            index+=1
+            if index>=minlen:
+                break
+            for x2 in strs:
+                templist.append(x2[index])
+            if len(set(templist))==1:
+                common+=templist[0]
+                templist.clear()
+            else:
+                flag=False 
+        return common
+        
+'''
+Details 
+Runtime: 32 ms, faster than 80.30% of Python3 online submissions for Longest Common Prefix.
+Memory Usage: 14.5 MB, less than 28.30% of Python3 online submissions for Longest Common Prefix.
+'''
