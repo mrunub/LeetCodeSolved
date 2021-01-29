@@ -1,0 +1,11 @@
+#https://leetcode.com/problems/implement-strstr/
+
+class Solution:
+    def strStr(self, haystack: str, needle: str) -> int:
+        return haystack.find(needle)
+'''
+Success
+Details 
+Runtime: 32 ms, faster than 71.78% of Python3 online submissions for Implement strStr().
+Memory Usage: 14.5 MB, less than 47.89% of Python3 online submissions for Implement strStr().
+'''
